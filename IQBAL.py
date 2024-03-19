@@ -476,7 +476,7 @@ class Crack:
 							
 	###----------[ METODE API ]---------- ###
 	def metode_api(self,email,pwx):
-		prog.update(des,description=f" {H2}•{P2}{H2}[IQBALGTG]•{P2} {str(self.loop)}/{len(tampung)} OK : {H2}{len(self.ok)}{P2} CP : {K2}{len(self.cp)}{P2}")
+		prog.update(des,description=f" {H2}•{P2}{H2}[IQBALgntg]•{P2} {str(self.loop)}/{len(tampung)} OK : {H2}{len(self.ok)}{P2} CP : {K2}{len(self.cp)}{P2}")
 		prog.advance(des)
 		try:
 			for pw in pwx:
