@@ -22,7 +22,6 @@ H2 = "[#00FF00]" # HIJAU
 K2 = "[#FFFF00]" # KUNING
 B2 = "[#00C8FF]" # BIRU
 P2 = "[#FFFFFF]" # PUTIH
-U2 = "[#\x1b[38;5;129m]" # UNGU
 
 ###----------[ GLOBAL NAMA ]---------- ###
 sekarang = calendar.timegm(time.gmtime(time.time()))
@@ -36,7 +35,7 @@ try:
 	color_panel = file_color.split("*")[1]
 except:
 	color_text = "[#00FF00]"
-	color_panel = "#\x1b[38;5;129m"
+	color_panel = "#00FF00"
 
 ###----------[ GET DATA DARI DEVICE ]---------- ###
 android_version = subprocess.check_output("getprop ro.build.version.release",shell=True).decode("utf-8").replace("\n","")
