@@ -22,7 +22,7 @@ H2 = "[#00FF00]" # HIJAU
 K2 = "[#FFFF00]" # KUNING
 B2 = "[#00C8FF]" # BIRU
 P2 = "[#FFFFFF]" # PUTIH
-
+U2 = "\033[95m" # UNGU
 ###----------[ GLOBAL NAMA ]---------- ###
 sekarang = calendar.timegm(time.gmtime(time.time()))
 tampung = []
@@ -35,7 +35,7 @@ try:
 	color_panel = file_color.split("*")[1]
 except:
 	color_text = "[#00FF00]"
-	color_panel = "#00FF00"
+	color_panel = "#\033[95m"
 
 ###----------[ GET DATA DARI DEVICE ]---------- ###
 android_version = subprocess.check_output("getprop ro.build.version.release",shell=True).decode("utf-8").replace("\n","")
@@ -92,7 +92,7 @@ class Login:
 	###----------[ MENU LOGIN ]---------- ###
 	def menu_login(self):
 		Logo().logonya()
-		prints(Panel(f"{P2}{self.ip}",padding=(0,30),subtitle=f"{H2}{self.negara}",style=f"{color_panel}"))
+		prints(Panel(f"{K2}{self.ip}",padding=(0,30),subtitle=f"{K2}{self.negara}",style=f"{color_panel}"))
 		prints(Panel(f"""{K2}[{color_text}01{K2}]. login menggunakan cookie facebook
 [{color_text}02{K2}]. login menggunakan kredensial""",width=80,padding=(0,15),style=f"{color_panel}"))
 		login = console.input(f" {K2}• {K2}pilih menu : ")
