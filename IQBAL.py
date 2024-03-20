@@ -531,7 +531,7 @@ class Crack:
 						tree = Tree(Panel.fit(f"""{M2}{user}|{pw}{K2}""",style=f"{color_panel}"),guide_style="bold grey100")
 						tree.add(Panel(f"{M2}{ua}{K2}",style=f"{color_panel}"))
 						prints(tree)
-						#os.popen('play-audio c.mp3')
+						open('play-audio c.mp3')
 						open(f"CP/{self.hari_ini}.txt","a").write(f"{user}|{pw}\n")
 						break
 				elif "Calls to this api have exceeded the rate limit. (613)" in post.text:
