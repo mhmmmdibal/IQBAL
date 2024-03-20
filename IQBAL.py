@@ -35,7 +35,7 @@ try:
 	color_text = file_color.split("*")[0]
 	color_panel = file_color.split("*")[1]
 except:
-	color_text = "[#FF0000]"
+	color_text = "[#AF00FF]"
 	color_panel = "#AF00FF"
 
 ###----------[ GET DATA DARI DEVICE ]---------- ###
@@ -186,7 +186,7 @@ class Menu:
 		
 		###----------[ PANEL BIASA ]---------- ###
 		prints(Panel(f"{K2}{self.ip}",padding=(0,30),title=f"{K2}{nama}",subtitle=f"{K2}{self.negara}",style=f"{color_panel}"))
-		prints(Panel(f"""{K2}[{color_text}01{P2}]. crack dari id publik   [{color_text}05{K2}]. crack dari random username
+		prints(Panel(f"""{K2}[{color_text}01{K2}]. crack dari id publik   [{color_text}05{K2}]. crack dari random username
 [{color_text}02{K2}]. crack dari pengikut    [{color_text}06{K2}]. crack dari pencarian nama
 [{color_text}03{K2}]. crack dari komentar    [{color_text}07{K2}]. crack dari member grup
 [{color_text}04{K2}]. crack dari random mail [{color_text}08{K2}]. crack dari file sendiri""",width=80,padding=(0,6),style=f"{color_panel}"))
