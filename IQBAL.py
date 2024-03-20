@@ -22,7 +22,7 @@ H2 = "[#00FF00]" # HIJAU
 K2 = "[#FFFF00]" # KUNING
 B2 = "[#00C8FF]" # BIRU
 P2 = "[#FFFFFF]" # PUTIH
-U2 = "[#purple]" # UNGU
+U2 = "[#\x1b[38;5;129m]" # UNGU
 
 ###----------[ GLOBAL NAMA ]---------- ###
 sekarang = calendar.timegm(time.gmtime(time.time()))
