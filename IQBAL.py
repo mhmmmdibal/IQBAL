@@ -35,7 +35,7 @@ try:
 	color_text = file_color.split("*")[0]
 	color_panel = file_color.split("*")[1]
 except:
-	color_text = "[\033[95m]"
+	color_text = "\033[95m"
 	color_panel = "\033[95m"
 
 ###----------[ GET DATA DARI DEVICE ]---------- ###
