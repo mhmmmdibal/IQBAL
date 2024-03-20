@@ -17,12 +17,11 @@ from rich.progress import Progress,SpinnerColumn,BarColumn,TextColumn,TimeElapse
 console = Console()
 
 ###----------[ WARNA PRINT RICH ]---------- ###
-P2 = "[\x1b[1;97m]" #PUTIH
-M2 = "[\x1b[1;91m]" #MERAH
-K2 = "[\033[93m]"   #KUNING
-H2 = "[\x1b[1;92m]" #HIJAU
-U2 = "[\033[95m]"   #UNGU
-B2 = "[\33[1;96]"  #BIRU
+M2 = "[#FF0000]" # MERAH
+H2 = "[#00FF00]" # HIJAU
+K2 = "[#FFFF00]" # KUNING
+B2 = "[#00C8FF]" # BIRU
+P2 = "[#FFFFFF]" # PUTIH
 
 ###----------[ GLOBAL NAMA ]---------- ###
 sekarang = calendar.timegm(time.gmtime(time.time()))
@@ -35,8 +34,8 @@ try:
 	color_text = file_color.split("*")[0]
 	color_panel = file_color.split("*")[1]
 except:
-	color_text = "[\033[95m]"
-	color_panel = "\033[95m"
+	color_text = "[FF0000]"
+	color_panel = "FF0000"
 
 ###----------[ GET DATA DARI DEVICE ]---------- ###
 android_version = subprocess.check_output("getprop ro.build.version.release",shell=True).decode("utf-8").replace("\n","")
