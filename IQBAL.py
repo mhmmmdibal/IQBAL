@@ -477,7 +477,7 @@ class Crack:
 							
 	###----------[ METODE API ]---------- ###
 	def metode_api(self,email,pwx):
-		prog.update(des,description=f" {M2}•{K2}{M2}[IQBALgntg]•{K2} {str(self.loop)}/{len(tampung)} OK : {M2}{len(self.ok)}{K2} CP : {K2}{len(self.cp)}{K2}")
+		prog.update(des,description=f" {M2}•{K2}{U2}[IQBALgntg]•{K2} {str(self.loop)}/{len(tampung)} OK : {H2}{len(self.ok)}{K2} CP : {M2}{len(self.cp)}{K2}")
 		prog.advance(des)
 		try:
 			for pw in pwx:
@@ -531,7 +531,7 @@ class Crack:
 						tree = Tree(Panel.fit(f"""{M2}{user}|{pw}{K2}""",style=f"{color_panel}"),guide_style="bold grey100")
 						tree.add(Panel(f"{M2}{ua}{K2}",style=f"{color_panel}"))
 						prints(tree)
-						os.open('play-audio c.mp3')
+						#os.popen('play-audio c.mp3')
 						open(f"CP/{self.hari_ini}.txt","a").write(f"{user}|{pw}\n")
 						break
 				elif "Calls to this api have exceeded the rate limit. (613)" in post.text:
