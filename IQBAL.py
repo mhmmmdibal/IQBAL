@@ -517,7 +517,7 @@ class Crack:
 							self.get_apk(user,pw,cookie)
 						else:
 							tree = Tree(Panel.fit(f"""{H2}{user}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
-							tree.add(Panel(f"{M2}{cookie}{K2}",style=f"{color_panel}"))
+							tree.add(Panel(f"{H2}{cookie}{P2}",style=f"{color_panel}"))
 							prints(tree)
 							#os.popen('play-audio o.mp3')
 						open(f"OK/{self.hari_ini}.txt","a").write(f"{user}|{pw}|{cookie}\n")
