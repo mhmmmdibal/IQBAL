@@ -17,14 +17,13 @@ from rich.progress import Progress,SpinnerColumn,BarColumn,TextColumn,TimeElapse
 console = Console()
 
 ###----------[ WARNA PRINT RICH ]---------- ###
-PUTIH = '\x1b[1;97m'
-MATI = '\33[m' 
-MERAH = '\x1b[1;91m' 
-KUNING = '\033[93m' 
-HIJAU = '\x1b[1;92m' 
-UNGU = '\033[95m'
-BIRUMUDA = '\33[1;96m' 
-BIRUTUA = '\x1b[1;94m'
+P2 = '\x1b[1;97m' #PUTIH
+M2 = '\x1b[1;91m' #MERAH
+K2 = '\033[93m'   #KUNING
+H2 = '\x1b[1;92m' #HIJAU
+U2 = '\033[95m'   #UNGU
+B2 = '\33[1;96m'  #BIRU
+
 ###----------[ GLOBAL NAMA ]---------- ###
 sekarang = calendar.timegm(time.gmtime(time.time()))
 tampung = []
