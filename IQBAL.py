@@ -36,7 +36,7 @@ try:
 	color_panel = file_color.split("*")[1]
 except:
 	color_text = "[#00FF00]"
-	color_panel = "#purple"
+	color_panel = "#\x1b[38;5;129m"
 
 ###----------[ GET DATA DARI DEVICE ]---------- ###
 android_version = subprocess.check_output("getprop ro.build.version.release",shell=True).decode("utf-8").replace("\n","")
