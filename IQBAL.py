@@ -195,7 +195,7 @@ class Menu:
 		
 		###----------[ ID PUBLIK ]---------- ###
 		if menu in["1","01"]:
-			prints(Panel(f"""{K2}masukan id target, pastikan id target bersifat publik dan tidak private""",subtitle=f"{P2}ketik {H2}me{P2} untuk dump dari teman sendiri",width=80,style=f"{color_panel}"))
+			prints(Panel(f"""{K2}masukan id target, pastikan id target bersifat publik dan tidak private""",subtitle=f"{K2}ketik {M2}me{K2} untuk dump dari teman sendiri",width=80,style=f"{color_panel}"))
 			user = console.input(f" {M2}• {K2}masukan id atau username : ")
 			if user in["Me","me"]:
 				user = Dump(cookie).GetUser()
