@@ -86,7 +86,7 @@ class Logo:
 88  888       88888    88   88  88{K2}   
 88  888       88    88 8888888  88{U2}            
 88  88  88    8888888  88   88  8888888{K2}
-    88    88""",width=80,style=f"{color_panel}"))
+    88    88           88   88""",width=80,style=f"{color_panel}"))
 	
 ###----------[ BAGIAN LOGIN ]---------- ###
 class Login:
