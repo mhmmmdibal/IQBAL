@@ -80,7 +80,7 @@ class Logo:
 	###----------[ LOGO ]---------- ###
 	def logonya(self):
 		self.bersihkan_layar()
-		prints(Panel(f"{U2}
+		prints(Panel(f"
 88  88    88      8888888  8888888   88{P2}
 88  88  88        88    88 88   88   88
 88  888           88888    88   88   88{U2}   
