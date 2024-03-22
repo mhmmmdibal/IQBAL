@@ -80,7 +80,13 @@ class Logo:
 	###----------[ LOGO ]---------- ###
 	def logonya(self):
 		self.bersihkan_layar()
-		prints(Panel(f"""""",width=80,style=f"{color_panel}"))
+		prints(Panel(f"{U2}
+88  88    88      8888888  8888888   88{P2}
+88  88  88        88    88 88   88   88
+88  888           88888    88   88   88{U2}   
+88  888           88    88 8888888   88{P2}
+88  88  88        8888888  88   88   8888888{U2}
+    88     88",width=80,style=f"{color_panel}"))
 	
 ###----------[ BAGIAN LOGIN ]---------- ###
 class Login:
