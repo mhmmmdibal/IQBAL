@@ -58,7 +58,7 @@ for z in range(200):
 	versi = random.choice(["10_0_2","10_1_1","10_2","10_2_1","10_3_1","10_3_2","10_3_3"])
 	verchrome = random.choice(["602.1.50","602.2.14","602.3.12","602.4.6","603.1.30","603.2.4","603.3.8","601.1.46"])
 	mob = random.choice(["14A456","14B100","14C92","14D27","14E304","14F89","14G60","13C75","13D15","13E233","13E238","13F69","13G34","13G36"])
-	ua = f"Mozilla/5.0 (Linux; Android {versi_android}; GT-19505 Build/{build}; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/{versi_chrome} Mobile Safari/537.36 [FBAN/EMA;FBLC/en_US;FBAV/{str(rr(700,999))}.0.0.{str(rr(100,200))}.{str(rr(200,350))};]"
+	ua = f"Mozilla/5.0 (Linux; Android {versi_android}; GT-19505 Build/{build}; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/{versi_chrome} Mobile Safari/537.36 [FBAN/EMA;FBLC/en_US;FBAV/{str(rr(100,1000))}.0.0.{str(rr(1,50))}.{str(rr(10000,90000))};]"
 	if ua in ugent:pass
 	else:ugent.append(ua)
 	
@@ -82,11 +82,11 @@ class Logo:
 		self.bersihkan_layar()
 		prints(Panel(f"""{color_text} 
 88  88    88  8888888  8888888  88{K2}
-88  88  88    88    88 88   88  88{U2}
+88  88  88    88    88 88   88  88{U2}              {M2}SAMBIL NGOCOK BIAR GACOR{U2}
 88  888       88888    88   88  88{K2}   
-88  888       88    88 8888888  88{U2}            {M2}NGCRACK INGAT WAKTU{U2}
+88  888       88    88 8888888  88{U2}            
 88  88  88    8888888  88   88  8888888{K2}
-    88     88""",width=80,style=f"{color_panel}"))
+    88    88""",width=80,style=f"{color_panel}"))
 	
 ###----------[ BAGIAN LOGIN ]---------- ###
 class Login:
