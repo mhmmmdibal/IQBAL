@@ -82,7 +82,7 @@ class Logo:
 		self.bersihkan_layar()
 		prints(Panel(f"""{color_text} 
 88  88    88  8888888  8888888  88{K2}
-88  88  88    88    88 88   88  88{U2}              {M2} bismilah dulu sblum crack{U2}
+88  88  88    88    88 88   88  88{U2}       {M2} bismilah dulu sblum crack{U2}
 88  888       88888    88   88  88{K2}   
 88  888       88    88 8888888  88{U2}            
 88  88  88    8888888  88   88  8888888{K2}
