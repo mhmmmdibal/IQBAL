@@ -77,10 +77,21 @@ class Logo:
 			try:os.system("clear") 
 			except:pass
 
-         ###----------[ LOGO ]---------- ###
-        def logonya(self):
+###----------[ LOGO ]---------- ###
+	def logonya(self):
 		self.bersihkan_layar()
-		prints(Panel(f"""""",width=80,style=f"{color_panel}"))
+		prints(Panel(f"""{color_text} 
+⠛⠛⣿⣿⣿⣿⣿⡷⢶⣦⣶⣶⣤⣤⣤⣀   
+    ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀    Jangan takut akan perubahan. 
+    ⠉⠉⠉⠙⠻⣿⣿⠿⠿⠛⠛⠛⠻⣿⣿⣇    Kita mungkin kehilangan sesuatu yang baik,namun
+  ⢤⣀⣀⣀⭕  ⢸⣷ ⭕⣀⣤⣴⣿⣿⣿⣆  kita akan peroleh sesuatu yang lebih baik lagi.
+     ⠹⠏   ⣿⣧ ⠹⣿⣿⣿⣿⣿⡿⣿
+          ⠛⠿⠇⢀⣼⣿⣿⠛⢯⡿⡟
+           ⠦⠴⢿⢿⣿⡿⠷ ⣿ 
+        ⠙⣷⣶⣶⣤⣤⣤⣤⣤⣶⣦⠃ 
+        ⢐⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿       BY:IQBAL
+        ⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇  
+          ⠙⠻⢿⣿⣿⣿⣿⠟⠁""",width=80,style=f"{color_panel}"))
 ###----------[ BAGIAN LOGIN ]---------- ###
 class Login:
 	
