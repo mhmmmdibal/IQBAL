@@ -79,8 +79,8 @@ class Logo:
 
          ###----------[ LOGO ]---------- ###
         def logonya(self):
-                self.bersihkan_layar()
-                prints(Panel(f"""""",width=80,style=f"{color_panel}"))
+		self.bersihkan_layar()
+		prints(Panel(f"""""",width=80,style=f"{color_panel}"))
 ###----------[ BAGIAN LOGIN ]---------- ###
 class Login:
 	
