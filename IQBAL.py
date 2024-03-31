@@ -81,12 +81,29 @@ class Logo:
 	def logonya(self):
 		self.bersihkan_layar()
 		prints(Panel(f"""{color_text} 
-88  88    88  8888888  8888888  88{K2}
-88  88  88    88    88 88   88  88{U2}       {M2} bismilah dulu sblum crack{U2}
-88  888       88888    88   88  88{K2}   
-88  888       88    88 8888888  88{U2}            
-88  88  88    8888888  88   88  8888888{K2}
-    88    88           88   88""",width=80,style=f"{color_panel}"))
+:XKKd                              .cxoo;
+kOOOOOOOx                   .000l                               ,ccc,
+  ';;;.                     .000c                               ,ccc'
+  .;;;.                     .000;                               'ccc.
+  .;;;.                     .000,                               'ccc.
+  .;;;.                     .000,     KNNk                      'ccc.
+  .;;;.                     .000.  'Xxl000Kl                    'ccc.
+  .;;;.       .KK;  dK. oo  .000. c,    x000.     dX0000K0      .ccc.
+  .;;;.      Ok;     'xOdc  .000 ,;     .000c   k.    .kkkx     .ccc.
+  .;;;.     ddo       ddd:  .000 O       000c  0       :kkk.    .ccc.
+  .;;;     cdd;       :dd;  .00Ol.       000:          .kkk;    .ccc
+  ';;;     ddd.       odd;  .000:        000.   :XKOxKl kkk;    .ccc
+  .;;;    .ddd.      .ddd,  .000        .00O  'Kkl     xkkk;    .ccc
+  .;;;    ,ddd.      ;cdd,  .00k        c00, .Okk       kkk,    .ccc
+  .;;,    ;ddd.      ;:dd'  .000.      .00;  dkkd      .kkk'    .ccc
+  .;;,    .ddd,     l.cdd'  .00kK.     K0'   kkkd      xxkk.    .cc:
+'Oo;;;0O.  lddd    d. cdd'  .0   oXooXO      ckkk.    c.okk.  .kdcccko
+           'dddOl;O.  cdd'                    xkkk   x, lkk
+             .ddd'    cdd'                      dkOk    ;c:lo:
+                      cdd.
+                      cdd.
+                      cdd.
+                      cdd""",width=80,style=f"{color_panel}"))
 	
 ###----------[ BAGIAN LOGIN ]---------- ###
 class Login:
