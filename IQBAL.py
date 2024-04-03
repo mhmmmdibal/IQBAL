@@ -51,7 +51,7 @@ for z in range(200):
 	rc = random.choice; rr = random.randint
 	android = str(random.randint(4,12))
 	aplikasi_versi = str(random.randint(100,299))+".0.0.0"	
-	device = random.choice(["SM-J320FN Build/LMY47V","NEO-X7-216A Build/XRN68H","STK-LX3 Build/HUAWEISTK-LX3","BTV-W09 Build/HUAWEIBEETHOVEN-W09","CLT-AL00 Build/HUAWEICLT-AL00","LYA-AL10 Build/HUAWEILYA-AL10","ELE-L29 Build/HUAWEIELE-L29","DIG-AL00 Build/HUAWEIDIG-AL00","EVA-L09 Build/HUAWEIEVA-L09","Nokia C3 Build/QP1A.190711.020","SM-A546B Build/UP1A.231005.007","m2006c3lg build/qp1a.190711.020")
+	device = random.choice(["SM-J320FN Build/LMY47V","NEO-X7-216A Build/XRN68H","STK-LX3 Build/HUAWEISTK-LX3","BTV-W09 Build/HUAWEIBEETHOVEN-W09","CLT-AL00 Build/HUAWEICLT-AL00","LYA-AL10 Build/HUAWEILYA-AL10","ELE-L29 Build/HUAWEIELE-L29","DIG-AL00 Build/HUAWEIDIG-AL00","EVA-L09 Build/HUAWEIEVA-L09","Nokia C3 Build/QP1A","SM-A546B Build/UP1A","m2006c3lg build/qp1a")
 	dev = device.split(" Build/")[0]
 	az = "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"
 	build = f"{random.choice(az)}{random.choice(az)}{random.choice(az)}{random.randint(10, 90)}{random.choice(az)}"
